@@ -1,10 +1,10 @@
-package com.masai.covid;
+package com.masai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CovidVaccinationAppApplicationTests {
+class Covid19VaccinationApplicationTests {
 
 	@Test
 	void contextLoads() {
