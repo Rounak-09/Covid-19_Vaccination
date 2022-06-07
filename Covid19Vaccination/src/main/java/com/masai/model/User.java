@@ -42,6 +42,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+//	public User(Integer userId, Long mobile, String password) {
+//		super();
+//		this.userId = userId;
+//		this.mobile = mobile;
+//		this.password = password;
+//	}
+//	
 	
 }

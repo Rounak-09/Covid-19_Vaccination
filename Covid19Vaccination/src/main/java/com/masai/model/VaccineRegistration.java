@@ -1,13 +1,13 @@
 package com.masai.model;
 
+
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import lombok.Data;
  @Entity
 public class VaccineRegistration {
 	 @Id
@@ -21,10 +21,23 @@ public class VaccineRegistration {
 	private String city;
 	private String state;
 	private Long pincode;
-	private String vaccinationDate ;
+	private String vaccinationDate;
 	private Integer slot;
 	private String vaccineName;
 	private String dose  ;
+
+//    "name":"vikas",
+//    "addharNumber":456987,
+//    "age":21,
+//    "gender":"male",
+//    "dob":456987,
+//    "city":"hapur",
+//    "state":"haryana",
+//    "pincode":245304,
+//    "vaccinationDate":"2019-02-05",
+//    "slot":1,
+//    "vaccineName":"x",
+//    "dose":"1"
 	public Integer getRegistrationId() {
 		return registrationId;
 	}
@@ -107,27 +120,42 @@ public class VaccineRegistration {
 	
 	 public VaccineRegistration() {
 		// TODO Auto-generated constructor stub
+		 super();
 	}
-	public VaccineRegistration(Integer registrationId, String name, Long addharNumber, Integer age, String gender,
-			Long dob, String city, String state, Long pincode, String vaccinationDate, Integer slot, String vaccineName,
-			String dose) {
-		super();
-		this.registrationId = registrationId;
-		this.name = name;
-		this.addharNumber = addharNumber;
-		this.age = age;
-		this.gender = gender;
-		this.dob = dob;
-		this.city = city;
-		this.state = state;
-		this.pincode = pincode;
-		this.vaccinationDate = vaccinationDate;
-		this.slot = slot;
-		this.vaccineName = vaccineName;
-		this.dose = dose;
+//	public VaccineRegistration(Integer registrationId, String name, Long addharNumber, Integer age, String gender,
+//			Long dob, String city, String state, Long pincode, String vaccinationDate, Integer slot, String vaccineName,
+//			String dose) {
+//		super();
+//		this.registrationId = registrationId;
+//		this.name = name;
+//		this.addharNumber = addharNumber;
+//		this.age = age;
+//		this.gender = gender;
+//		this.dob = dob;
+//		this.city = city;
+//		this.state = state;
+//		this.pincode = pincode;
+//		this.vaccinationDate = vaccinationDate;
+//		this.slot = slot;
+//		this.vaccineName = vaccineName;
+//		this.dose = dose;
+//	}
+	
+//	{
+//	    "name":"vikas",
+//	    "addharNumber":456987,
+//	    "age":21,
+//	    "gender":"male",
+//	    "dob":456987,
+//	    "city":"hapur",
+//	    "state":"haryana",
+//	    "pincode":245304,
+//	    "vaccinationDate":"12/12/12",
+ //     "slot":1,
+  //    "vaccineName":"x"
+//	    "dose":"1"
+
 	}
-	
-	
 	
 
-}
+
