@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	private String getRandomString(int n) {
-		String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+"0123456789"+"abcdefghijklmnopqrstuvwxyz";
+		String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"+"0123456789"+"abcdefghijklmnopqrstuvwxyz"+"0123456789";
 		String randomString = "";
 		
 		for(int i=0; i<n; i++) {
