@@ -27,7 +27,7 @@ public class VaccineRegistrationController {
 	
 	// http://localhost:8089/createVaccineRegistration
 	// create vaccine center 
-	@PostMapping("/createVaccineRegistration")
+	@PostMapping("/vaccineregistration")
 	public ResponseEntity<VaccineRegistration> saveVaccineRegistrationHandler(@RequestBody VaccineRegistration VaccineRegistration){
 				
 		VaccineRegistration savedRegistration = vrService.saveVaccineRegistration(VaccineRegistration);
@@ -38,7 +38,7 @@ public class VaccineRegistrationController {
 		
 	// http://localhost:8089/vaccineRegistration/6
 	// get vaccine center  by centerId
-	@GetMapping("/vaccineRegistration/{vaccineRegistrationId}")
+	@GetMapping("/vaccineregistration/{vaccineRegistrationId}")
 	public VaccineRegistration getVaccineRegistrationByVaccineRegistrationId(@PathVariable("vaccineRegistrationId") Integer vaccineRegistrationId) {
 				
 			return vrService.getVaccineRegistrationtByVaccineRegistrationId(vaccineRegistrationId);
@@ -48,7 +48,7 @@ public class VaccineRegistrationController {
 	
     // http://localhost:8089/allvaccineRegistration
 	// get all available vaccine center
-	@GetMapping("/allvaccineRegistration")
+	@GetMapping("/allvaccineregistration")
 	public ResponseEntity<List<VaccineRegistration >> getAllVaccineRegistrationDetails(){
 				
 		
@@ -60,7 +60,7 @@ public class VaccineRegistrationController {
 			
 	// http://localhost:8089/vaccineRegistration/6
 	// delete vaccine center  by centerId
-	@DeleteMapping("/vaccineRegistration/{vaccineRegistrationId}")
+	@DeleteMapping("/vaccineregistration/{vaccineRegistrationId}")
 	public VaccineRegistration deleteVaccineCenterByVaccineRegistrationId(@PathVariable("vaccineRegistrationId") Integer vaccineRegistrationId){
 				
 			return vrService.deleteVaccineRegistrationtByvaccineRegistrationId(vaccineRegistrationId);
@@ -70,7 +70,7 @@ public class VaccineRegistrationController {
 		
 	// http://localhost:8089/vaccineRegistrations
 	// update vaccine center 
-	@PutMapping("/vaccineRegistrations")
+	@PutMapping("/vaccineregistrations")
 	public ResponseEntity<VaccineRegistration> updateVaccineHub(@RequestBody VaccineCenter vaccinecenter){
 				
 		VaccineRegistration updatedVaccineRegistration = vrService.updateVaccineRegistration(null);
