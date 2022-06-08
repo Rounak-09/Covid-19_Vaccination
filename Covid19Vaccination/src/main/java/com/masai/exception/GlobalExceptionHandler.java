@@ -111,7 +111,8 @@ public class GlobalExceptionHandler {
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 				
 	
-	 return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);		
+	 return new ResponseEntity<MyErrorDetails>(err, HttpStatus.BAD_REQUEST);	
+	 
 				
 	}
 	
