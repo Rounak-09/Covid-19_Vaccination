@@ -21,7 +21,7 @@ public class VaccineCenter {
 	
 	public VaccineCenter() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public VaccineCenter(int centerId, String centerName, String city, String state) {
 		super();
