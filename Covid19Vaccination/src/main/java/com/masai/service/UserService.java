@@ -11,7 +11,7 @@ public interface UserService {
 	
 	public UserSession saveLogin(User user)throws UserException;
 	
-//	public String deleteSession(String key)throws UserException;
+	public String deleteSession(String key)throws UserException;
 	
-//	public User updateUser(User user, String key)throws UserException;
+	public User updateUser(User user, String key)throws UserException;
 }

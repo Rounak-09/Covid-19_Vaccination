@@ -10,6 +10,12 @@ import javax.persistence.Id;
 @Entity
 public class UserSession {
 
+	public UserSession() {
+		super();
+	}
+
+
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;

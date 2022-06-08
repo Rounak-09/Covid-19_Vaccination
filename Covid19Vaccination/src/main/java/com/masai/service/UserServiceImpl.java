@@ -2,6 +2,7 @@ package com.masai.service;
 
 
 import java.time.LocalDateTime;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,36 +78,38 @@ public class UserServiceImpl implements UserService{
 		return randomString;
 	}
 	
-//	@Override
-//	public User updateUser(User user, String key)throws UserException{
-//		
-//		Optional<UserSession> opt = sDao.findByUuid(key);
-//		
-//		if(opt.isPresent()) {
-//			UserSession existingSession = opt.get();
-//			Integer userId = existingSession.getUserId();
-//			User existingUser = uDao.getByUserId(userId);
-//			Long newMobile = user.getMobile();
-//			String newPassword = user.getPassword();
-//			existingUser.setMobile(newMobile);
-//			existingUser.setPassword(newPassword);
-//			return existingUser;
-//		}
-//		else {
-//			throw new UserException("Invalid User");
-//		}
-//	}
+	@Override
+	public User updateUser(User user, String key)throws UserException{
+		
+		Optional<UserSession> opt = sDao.findByUuid(key);
+		
+		if(opt.isPresent()) {
+			UserSession existingSession = opt.get();
+			Integer existingUserId = existingSession.getUserId();
+			Integer userId = user.getUserId();
+			if(existingUserId==userId) {
+				return uDao.save(user);
+			}
+			else {
+				throw new UserException("Invalid User");
+			}
+		}
+		else {
+			throw new UserException("Invalid User");
+		}
+	}
 	
-//	@Override
-//	public String deleteSession(String key) throws UserException{
-//		
-//		Optional<UserSession> opt = sDao.findByUuid(key);
-//		if(opt.isPresent()) {
-//			sDao.deleteByUuid(key);
-//			return "Logged out successfully";
-//		}
-//		else {
-//			throw new UserException("Invalid UUID");
-//		}
-//	}
+	@Override
+	public String deleteSession(String key) throws UserException{
+		
+		Optional<UserSession> opt = sDao.findByUuid(key);
+		if(opt.isPresent()) {
+			UserSession session = opt.get();
+			sDao.deleteById(session.getId());
+			return "Logged out successfully";
+		}
+		else {
+			throw new UserException("Invalid UUID");
+		}
+	}
 }

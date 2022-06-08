@@ -10,5 +10,5 @@ public interface SessionDao extends JpaRepository<UserSession, Integer> {
 
 	public Optional<UserSession> findByUserId(Integer userId);
 	public Optional<UserSession> findByUuid(String uuid);
-//	public String deleteByUuid(String uuid);
+	public String deleteByUuid(String uuid);
 }

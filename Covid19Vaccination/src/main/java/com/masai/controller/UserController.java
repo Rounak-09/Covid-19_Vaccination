@@ -34,17 +34,17 @@ public class UserController {
 		return new ResponseEntity<UserSession>(userLoggedin,HttpStatus.ACCEPTED);
 	}
 	
-//	@PutMapping("/users/{key}")
-//	public ResponseEntity<User> updateUserHandler(@RequestBody User user,@PathVariable String key){
-//		
-//		User updatedUser = uService.updateUser(user, key);
-//		return new ResponseEntity<User>(updatedUser,HttpStatus.ACCEPTED);
-//	}
+	@PutMapping("/users/{key}")
+	public ResponseEntity<User> updateUserHandler(@RequestBody User user,@PathVariable String key){
+		
+		User updatedUser = uService.updateUser(user, key);
+		return new ResponseEntity<User>(updatedUser,HttpStatus.ACCEPTED);
+	}
 	
-//	@DeleteMapping("/users/logout/{key}")
-//	public ResponseEntity<String> deleteUserHandler(@PathVariable String key){
-//		String userLoggedout = uService.deleteSession(key);
-//		return new ResponseEntity<String>("Logged out successfully",HttpStatus.ACCEPTED);
-//	}
+	@DeleteMapping("/users/logout/{key}")
+	public ResponseEntity<String> deleteUserHandler(@PathVariable String key){
+		uService.deleteSession(key);
+		return new ResponseEntity<String>("Logged out successfully",HttpStatus.ACCEPTED);
+	}
 
 }
