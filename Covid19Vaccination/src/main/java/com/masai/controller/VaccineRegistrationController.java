@@ -27,10 +27,10 @@ public class VaccineRegistrationController {
 	
 	// http://localhost:8089/createVaccineRegistration
 	// create vaccine center 
-	@PostMapping("/vaccineregistration")
-	public ResponseEntity<VaccineRegistration> saveVaccineRegistrationHandler(@RequestBody VaccineRegistration VaccineRegistration){
+	@PostMapping("/vaccineregistration/{key}")
+	public ResponseEntity<VaccineRegistration> saveVaccineRegistrationHandler(@RequestBody VaccineRegistration VaccineRegistration , @PathVariable("key") String key){
 				
-		VaccineRegistration savedRegistration = vrService.saveVaccineRegistration(VaccineRegistration);
+		VaccineRegistration savedRegistration = vrService.saveVaccineRegistration(VaccineRegistration , key);
 			
 		     return new ResponseEntity<VaccineRegistration >(savedRegistration ,HttpStatus.CREATED);
 				

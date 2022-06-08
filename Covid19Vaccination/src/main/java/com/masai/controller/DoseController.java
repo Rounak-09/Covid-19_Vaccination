@@ -24,7 +24,7 @@ public class DoseController {
 	
 	// http://localhost:8089/createDose
 	// create dose
-	@PostMapping("/createdose")
+	@PostMapping("/admin/createdose")
 	public ResponseEntity<Dose> saveDoseHandler(@RequestBody Dose dose){
 		
 		Dose savedDose= doseService.saveDose(dose);
@@ -43,22 +43,22 @@ public class DoseController {
 	}
 	
 	
-	// http://localhost:8089/doses
-	// get all doses
-	@GetMapping("/doses")
-	public ResponseEntity<List<Dose>> getAllVaccineRegistrationDetails(){
-		
-		
-		List<Dose> doses = doseService.getAllDoses();
-		
-		return new ResponseEntity<List<Dose>>(doses, HttpStatus.OK);
-		
-	}
+//	// http://localhost:8089/doses
+//	// get all doses
+//	@GetMapping("/doses")
+//	public ResponseEntity<List<Dose>> getAllVaccineRegistrationDetails(){
+//		
+//		
+//		List<Dose> doses = doseService.getAllDoses();
+//		
+//		return new ResponseEntity<List<Dose>>(doses, HttpStatus.OK);
+//		
+//	}
 	
 	
 	// http://localhost:8089/updateDose
 	// update dose by id
-	@PutMapping("/updatedose")
+	@PutMapping("/admin/updatedose")
 	public Dose updateDoseByUsingId(@RequestBody Dose dose) {
 		
 		return doseService.updateDose(dose);

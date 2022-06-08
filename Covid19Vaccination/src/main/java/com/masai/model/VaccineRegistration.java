@@ -32,6 +32,7 @@ public class VaccineRegistration {
 	private String vaccineName;
 	private boolean does1;
 	private boolean dose2;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	//@JoinColumn(name="fk_UA")
 	private UserAppointment userAppointment;

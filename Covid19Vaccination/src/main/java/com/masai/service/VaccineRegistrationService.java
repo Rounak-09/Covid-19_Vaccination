@@ -9,7 +9,7 @@ import com.masai.model.VaccineRegistration;
 
 public interface VaccineRegistrationService {
 
-	    public VaccineRegistration saveVaccineRegistration(VaccineRegistration vaccineRegistration);
+	    public VaccineRegistration saveVaccineRegistration(VaccineRegistration vaccineRegistration , String key);
 	    
 	    public VaccineRegistration getVaccineRegistrationtByVaccineRegistrationId(Integer vaccineRegistrationId) throws VaccineRegistrationException;
 	    

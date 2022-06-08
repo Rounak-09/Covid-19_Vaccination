@@ -20,7 +20,7 @@ public class UserController {
 	@Autowired
 	private UserService uService;
 	
-	@PostMapping("/users/sigup")
+	@PostMapping("/users/signup")
 	public ResponseEntity<User> saveUserHandler(@RequestBody User user){
 		
 		User savedUser = uService.saveUser(user);

@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.masai.exception.VaccineRepositoryException;
+import com.masai.exception.UserException;
 import com.masai.exception.VaccineRegistrationException;
 import com.masai.model.VaccineRepository;
+import com.masai.model.UserSession;
 import com.masai.model.VaccineRegistration;
+import com.masai.repository.SessionDao;
 import com.masai.repository.VaccineRegistrationDao;
 
 @Service
@@ -18,10 +21,19 @@ public class VaccineRegistrationServiceImpl implements VaccineRegistrationServic
 	@Autowired
 	private VaccineRegistrationDao vaccineRegistrationDao;
 	
-	@Override
-	public VaccineRegistration saveVaccineRegistration(VaccineRegistration vaccineRegistration) {
+	@Autowired
+	private SessionDao sDao;
 	
-        return vaccineRegistrationDao.save(vaccineRegistration);
+	@Override
+	public VaccineRegistration saveVaccineRegistration(VaccineRegistration vaccineRegistration ,String key) {
+	     
+		Optional<UserSession> opt = sDao.findByUuid(key);
+		if(opt.isPresent()) {
+			 return vaccineRegistrationDao.save(vaccineRegistration);
+		}
+		else {
+			throw new UserException("Invalid User");
+		}
 	}
 
 	@Override
