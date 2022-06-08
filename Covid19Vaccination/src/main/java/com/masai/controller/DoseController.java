@@ -24,7 +24,7 @@ public class DoseController {
 	
 	// http://localhost:8089/createDose
 	// create dose
-	@PostMapping("/createDose")
+	@PostMapping("/createdose")
 	public ResponseEntity<Dose> saveDoseHandler(@RequestBody Dose dose){
 		
 		Dose savedDose= doseService.saveDose(dose);
@@ -58,7 +58,7 @@ public class DoseController {
 	
 	// http://localhost:8089/updateDose
 	// update dose by id
-	@PutMapping("/updateDose")
+	@PutMapping("/updatedose")
 	public Dose updateDoseByUsingId(@RequestBody Dose dose) {
 		
 		return doseService.updateDose(dose);

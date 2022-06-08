@@ -27,7 +27,7 @@ public class VaccineCenterController {
 
 	// http://localhost:8089/vaccineCenter
 	// create vaccine center 
-	@PostMapping("/vaccineCenter")
+	@PostMapping("/vaccinecenter")
 	public ResponseEntity<VaccineCenter> saveVaccineCenterHandler(@RequestBody VaccineCenter vaccinecenter){
 			
 		VaccineCenter savedVaccineCenter = vcService.saveVaccineCenter( vaccinecenter);
@@ -38,7 +38,7 @@ public class VaccineCenterController {
 	
 	// http://localhost:8089/vaccineCenter/6
 	// get vaccine center  by centerId
-	@GetMapping("/vaccineCenter/{centerId}")
+	@GetMapping("/vaccinecenter/{centerId}")
 	public VaccineCenter getVaccineCenterByCenterId(@PathVariable("centerId") Integer centerId) {
 			
 		return vcService.getVaccineCenterByCenterId(centerId);
@@ -47,7 +47,7 @@ public class VaccineCenterController {
 		
     // http://localhost:8089/allvaccineCenter
 	// get all available vaccine center
-	@GetMapping("/allvaccineCenter")
+	@GetMapping("/allvaccinecenter")
 	public ResponseEntity<List<VaccineCenter >> getAllVaccineCenterDetails(){
 			
 			
@@ -59,7 +59,7 @@ public class VaccineCenterController {
 		
     // http://localhost:8089/vaccineCenter/6
 	// delete vaccine center  by centerId
-	@DeleteMapping("/vaccineCenter/{centerId}")
+	@DeleteMapping("/vaccinecenter/{centerId}")
 	public VaccineCenter deleteVaccineCenterByCenterId(@PathVariable("centerId") Integer centerId){
 			
 		return vcService.deleteVaccineCenterByCenterId(centerId);
@@ -69,7 +69,7 @@ public class VaccineCenterController {
 	
 	// http://localhost:8089/vaccineCenters
 	// update vaccine center 
-	@PutMapping("/vaccineCenters")
+	@PutMapping("/vaccinecenters")
 	public ResponseEntity<VaccineCenter> updateVaccineHub(@RequestBody VaccineCenter vaccinecenter){
 			
 		VaccineCenter updatedVaccineCenter = vcService.updateVaccineCenter(vaccinecenter);
