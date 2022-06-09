@@ -15,7 +15,9 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
+import lombok.Data;
 
+@Data
 @Entity
 public class User {
 	
@@ -24,7 +26,7 @@ public class User {
 	@Column(name="userId")
 	private Integer userId;
 	
-	
+	@Size(min=3,max=15,message="Invalid Name")
 	private String name;
 	
 	@Email(message="Enter valid email")

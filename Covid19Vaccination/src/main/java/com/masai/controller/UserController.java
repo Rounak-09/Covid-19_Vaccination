@@ -1,5 +1,7 @@
 package com.masai.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +24,7 @@ public class UserController {
 	private UserService uService;
 	
 	@PostMapping("/users/signup")
-	public ResponseEntity<User> saveUserHandler(@RequestBody User user){
+	public ResponseEntity<User> saveUserHandler(@Valid @RequestBody User user){
 		
 		User savedUser = uService.saveUser(user);
 		return new ResponseEntity<User>(savedUser,HttpStatus.CREATED);

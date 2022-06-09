@@ -30,9 +30,6 @@ public class UserAppointment {
     
 	
 	
-	
-	
-	
 public UserAppointment(Integer userId, String vaccineCenter, LocalDate vaccinationDate, Integer slot,
 			String vaccineName, String vaccineDose) {
 		super();
