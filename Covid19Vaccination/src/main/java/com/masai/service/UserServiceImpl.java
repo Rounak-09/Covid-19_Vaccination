@@ -33,12 +33,18 @@ public class UserServiceImpl implements UserService{
 		
 		Long mobile = user.getMobile();
 		User existingUser = uDao.findByMobile(mobile);
-		if(existingUser==null) {
-			return uDao.save(user);
+		if(String.valueOf(mobile).length()==10) {
+			if(existingUser==null) {
+				return uDao.save(user);
+			}
+			else {
+				throw new UserException("User already exists with Mobile No. : "+mobile);
+			}
 		}
 		else {
-			throw new UserException("User already exists with Mobile No. : "+mobile);
+			throw new UserException("Mobile number must be 10 digits");
 		}
+		
 		
 	}
 	
@@ -109,7 +115,7 @@ public class UserServiceImpl implements UserService{
 			return "Logged out successfully";
 		}
 		else {
-			throw new UserException("Invalid UUID");
+			throw new UserException("Invalid User");
 		}
 	}
 }

@@ -20,7 +20,7 @@ public class UserSession {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-	@Column(unique=true)
+	@Column(name="userId")
 	private Integer userId;
 	private String uuid;
 	private LocalDateTime localDateTime;
