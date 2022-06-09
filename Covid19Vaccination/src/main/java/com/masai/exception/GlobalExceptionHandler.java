@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(AdminException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler(AdminException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("AdminException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
 	}
 	@ExceptionHandler(DoseException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler(DoseException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("DoseException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -37,7 +37,7 @@ public class GlobalExceptionHandler {
 	}
 	@ExceptionHandler(UserAppointmentException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler(UserAppointmentException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("UserAppointmentException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
 	}
 	@ExceptionHandler(UserException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler(UserException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("UserException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -59,7 +59,7 @@ public class GlobalExceptionHandler {
 	}
 	@ExceptionHandler(VaccineCenterException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler(VaccineCenterException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("VaccineCenterException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -70,7 +70,7 @@ public class GlobalExceptionHandler {
 	}
 	@ExceptionHandler(VaccineRegistrationException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler(VaccineRegistrationException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("VaccineRegistrationException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -81,7 +81,7 @@ public class GlobalExceptionHandler {
 	}
 	@ExceptionHandler( VaccineRepositoryException.class)
 	public ResponseEntity<MyErrorDetails> myExpHandler( VaccineRepositoryException ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...RNE");
+		System.out.println("VaccineRepositoryException");
 		
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
 		
@@ -94,7 +94,7 @@ public class GlobalExceptionHandler {
 	
 	@ExceptionHandler(NoHandlerFoundException.class)
 	public ResponseEntity<MyErrorDetails> mynotFoundHandler(NoHandlerFoundException nfe,WebRequest req)  {
-		System.out.println("inside myHandler method...NHFE");
+		System.out.println("NoHandlerFoundException");
 
 		MyErrorDetails err=new MyErrorDetails(LocalDateTime.now(), nfe.getMessage(), req.getDescription(false));
 
@@ -105,7 +105,7 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<MyErrorDetails> myExpHandlerMain(Exception ie,WebRequest wr)  {
-		System.out.println("inside myHandler method...EXP");
+		System.out.println("Exception");
 		
 
 		MyErrorDetails err = new MyErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
