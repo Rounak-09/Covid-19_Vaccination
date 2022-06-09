@@ -24,6 +24,7 @@ public class AdminController {
 	public ResponseEntity<Admin> saveAdminHandler(@RequestBody Admin admin){
 		
 		Admin savedAdmin = aService.saveAdmin(admin);
+		
 		return new ResponseEntity<Admin>(savedAdmin,HttpStatus.CREATED);
 	}
 	
@@ -31,6 +32,7 @@ public class AdminController {
 	public ResponseEntity<AdminSession> getAdminHandler(@RequestBody Admin admin){
 		
 		AdminSession adminLoggedin = aService.saveAdminLogin(admin);
+		
 		return new ResponseEntity<AdminSession>(adminLoggedin,HttpStatus.ACCEPTED);
 	}
 }
