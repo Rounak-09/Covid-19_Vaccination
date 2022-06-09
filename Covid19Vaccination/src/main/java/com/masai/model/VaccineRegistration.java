@@ -3,21 +3,27 @@ package com.masai.model;
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
 @Entity
+@NoArgsConstructor
 public class VaccineRegistration {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int vaccineRegistrationId;
 	
+	@Column(name = "userId")
+	private Integer userId;
 	private String name;
 	private long aadharNo;
 	private int age;
@@ -30,8 +36,7 @@ public class VaccineRegistration {
 	private LocalDate dateofregistration;
 	private int slot;
 	private String vaccineName;
-	private boolean does1;
-	private boolean dose2;
+	private String vaccineDose;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	//@JoinColumn(name="fk_UA")
@@ -54,7 +59,30 @@ public class VaccineRegistration {
 //		"dose2" : false
 //			
 //	}
+
+	public VaccineRegistration( Integer userId, String name, long aadharNo, int age,
+			String gender, LocalDate dob, String address, String city, String state, String pincode,
+			LocalDate dateofregistration, int slot, String vaccineName, String vaccineDose,
+			UserAppointment userAppointment) {
+		super();
 	
+		this.userId = userId;
+		this.name = name;
+		this.aadharNo = aadharNo;
+		this.age = age;
+		this.gender = gender;
+		this.dob = dob;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.pincode = pincode;
+		this.dateofregistration = dateofregistration;
+		this.slot = slot;
+		this.vaccineName = vaccineName;
+		this.vaccineDose = vaccineDose;
+		this.userAppointment = userAppointment;
+	}
+
 	public VaccineRegistration() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -66,6 +94,14 @@ public class VaccineRegistration {
 
 	public void setVaccineRegistrationId(int vaccineRegistrationId) {
 		this.vaccineRegistrationId = vaccineRegistrationId;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getName() {
@@ -164,20 +200,12 @@ public class VaccineRegistration {
 		this.vaccineName = vaccineName;
 	}
 
-	public boolean isDoes1() {
-		return does1;
+	public String getVaccineDose() {
+		return vaccineDose;
 	}
 
-	public void setDoes1(boolean does1) {
-		this.does1 = does1;
-	}
-
-	public boolean isDose2() {
-		return dose2;
-	}
-
-	public void setDose2(boolean dose2) {
-		this.dose2 = dose2;
+	public void setVaccineDose(String vaccineDose) {
+		this.vaccineDose = vaccineDose;
 	}
 
 	public UserAppointment getUserAppointment() {
@@ -188,27 +216,12 @@ public class VaccineRegistration {
 		this.userAppointment = userAppointment;
 	}
 
-	public VaccineRegistration(int vaccineRegistrationId, String name, long aadharNo, int age, String gender,
-			LocalDate dob, String address, String city, String state, String pincode, LocalDate dateofregistration,
-			int slot, String vaccineName, boolean does1, boolean dose2, UserAppointment userAppointment) {
-		super();
-		this.vaccineRegistrationId = vaccineRegistrationId;
-		this.name = name;
-		this.aadharNo = aadharNo;
-		this.age = age;
-		this.gender = gender;
-		this.dob = dob;
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.pincode = pincode;
-		this.dateofregistration = dateofregistration;
-		this.slot = slot;
-		this.vaccineName = vaccineName;
-		this.does1 = does1;
-		this.dose2 = dose2;
-		this.userAppointment = userAppointment;
-	}
+	
+
+ 
+	
+	
+	
 
 
 	
