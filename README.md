@@ -1,29 +1,50 @@
-# Covid-19_Vaccination
-A java spring boot project developed by 5 developers within 7 days.
-
-The ER Diagram of our project:
-![ER_Diagram](https://user-images.githubusercontent.com/100183222/173191169-d8e1af16-af16-40ee-a3bf-2a422f254293.png)
+<h1 align="center">Covid-19 Vaccination Online Booking</h1>
 
 
-Team Members: 
-• Rounak Abraham 
-• Neha Kumari 
-• Yaman Singh 
-• Prithvi Raj Keerthi 
-• Rav Chandan Kumar Singh
+<h3 align="center">The ER Diagram of our project:</h3>
+<img src="https://user-images.githubusercontent.com/100183222/173191169-d8e1af16-af16-40ee-a3bf-2a422f254293.png">
 
-Services: 
-• User Signup and Login 
-• See different lists of vaccines and vaccination centres available 
-• Enter your details, choose your desired time slot and register for vaccination 
-• Generate Appointment • Get Vaccination Dose Status (Date and time of vaccination) 
-• User Logout
 
-Technology Stack: 
-• Java 
-• Spring Boot 
-• Spring Boot JPA 
-• Hibernate 
-• MySQL 
-• Swagger 
-• Lombok
+<h3>Team Members:</h3>
+
+- Rounak Abraham
+
+- Neha Kumari
+
+- Yaman Singh
+
+- Prithvi Raj Keerthi
+
+- Rav Chandan Kumar Singh
+
+
+<h3>Services:</h3>
+
+- User Signup and Login
+
+- See different lists of vaccines and vaccination centres available
+
+- Enter your details, choose your desired time slot and register for vaccination
+
+- Generate Appointment
+
+- Get Vaccination Details (Date and time of vaccination as per dose)
+
+- User Logout
+
+
+<h3>Technology Stack:</h3>
+
+- Java
+
+- Spring Boot
+
+- Spring Boot JPA
+
+- Hibernate
+
+- MySQL
+
+- Swagger
+
+- Lombok
